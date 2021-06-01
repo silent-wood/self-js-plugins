@@ -1,0 +1,85 @@
+<!--
+ * @Author: lishun
+ * @Date: 2021-01-13 09:52:15
+ * @LastEditors: lishun
+ * @LastEditTime: 2021-01-18 15:59:25
+ * @Description: 描述
+ * @Copyright: Cloud-Star. Co. Ltd. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        .magnifier {
+            position: relative;
+            margin: 20px 0 20px 20px;
+            width: 450px;
+        }
+        .abbre {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            box-sizing: border-box;
+            border: 1px solid #eee
+        }
+        .abbre img {
+            width: 100%;
+            height: 100%;
+        }
+        .abbre .mark {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            width: 250px;
+            height: 250px;
+            cursor: move;
+            background: rgba(255, 0, 0, .3);
+            z-index: 10
+        }
+        .detail {
+            position: absolute;
+            right: -500px;
+            top: 0;
+            display: none;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .detail img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10
+        }
+    </style>
+</head>
+
+<body>
+    <section class="magnifier">
+        <!-- 缩略图 -->
+        <div class="abbre">
+            <img src="1.jpg" alt="">
+            <!-- 遮罩层 -->
+            <div class="mark"></div>
+        </div>
+        <!-- 大图 -->
+        <div class="detail">
+            <img src="2.jpg" alt="">
+        </div>
+    </section>
+    <script src="jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
